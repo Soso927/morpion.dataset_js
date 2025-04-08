@@ -1,17 +1,21 @@
-
+// il récupére l'élément Id Titre
 let info = document.getElementById("titre");
+// il récupére le bouton rejouer 
 document.getElementById("rejouer").style.display = "none";
+// il ajoute du texte avec la propriété textContent. 
 info.textContent = "Super Morpion";
-
+// il ajoute un événement pour charger le jeu 
 window.addEventListener('load', (event) => {
+    // il récupére tous les "td"
     let getAllCells = document.querySelectorAll('td');
+    // il utilise le foreach qui permet de parcourir le tableau et d'éxécuter une fonction anonyme sur chaque élément du tableau 
     getAllCells.forEach(cell => {
         cell.addEventListener("click", function () {
             jouer(cell.id);
         })
     })
 });
-
+// il sélectionne le bouton rejouer sur l'événement click 
 document.querySelector("#boutonRejouer").addEventListener("click", function () {
     document.getElementById("rejouer").style.display = "none";
     info.textContent = "Super Morpion";
